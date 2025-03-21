@@ -737,5 +737,35 @@
     "body": "<Link href={$1}>$2</Link>",
     "description": "Link, nextjs",
     "scope": "text.html"
+  },
+  "view lynix": {
+    "prefix": "view",
+    "body": "<view>$1</view>",
+    "description": "el view lynx",
+    "scope": "text.html"
+  },
+  "text lynix": {
+    "prefix": "text",
+    "body": "<text>$1</text>",
+    "description": "el text lynx",
+    "scope": "text.html"
+  },
+  "scroll-view lynix": {
+    "prefix": "scroll-view",
+    "body": "<scroll-view>$1</scroll-view>",
+    "description": "el scroll-view lynx",
+    "scope": "text.html"
+  },
+  "list lynix": {
+    "prefix": "list",
+    "body": "<list>$1</list>",
+    "description": "you will get a scrollable page that displays a large number",
+    "scope": "text.html"
+  },
+  "page lynix": {
+    "prefix": "page",
+    "body": "<page>$1</page>",
+    "description": "el page lynx",
+    "scope": "text.html"
   }
 }

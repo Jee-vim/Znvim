@@ -6,6 +6,7 @@ vim.opt.backupdir = vim.fn.stdpath("data") .. "/backup"
 
 vim.opt.wrap = false
 vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.showmode = false -- show insert, visual or normal mode
 vim.opt.hlsearch = true -- highlight when match search words
 vim.opt.showcmd = true
