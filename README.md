@@ -14,6 +14,9 @@ typescript-language-server --stdio
 ```
 or see [this](https://github.com/typescript-language-server/typescript-language-server)
 
+## FYI
+type `:Keybinds` to see custome keybinds
+
 
 ## Error 
 

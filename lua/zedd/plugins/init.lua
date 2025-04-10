@@ -28,6 +28,7 @@ local plugins = {
 	require("zedd.plugins.autopairs.lazyspec"),
 	require("zedd.plugins.screenshot.lazyspec"),
 	require("zedd.plugins.test.lazyspec"),
+	require("zedd.plugins.screenkey.lazyspec"),
 }
 
 require("lazy").setup(plugins, {
