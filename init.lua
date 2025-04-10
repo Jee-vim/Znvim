@@ -7,4 +7,5 @@ vim.cmd.highlight('IndentLineCurrent guifg=#b8bb26')
 
 require("zedd.core.options")
 require("zedd.core.keybinds")
+require("zedd.core.keybinds.keydump")
 require("zedd.plugins")

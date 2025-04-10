@@ -17,7 +17,7 @@ local plugins = {
 	require("zedd.plugins.colors.lazyspec"),
 	require("zedd.plugins.comments.lazyspec"),
 	require("zedd.plugins.gruvbox.lazyspec"),
-	require("zedd.plugins.indentmini.lazyspec"),
+	-- require("zedd.plugins.indentmini.lazyspec"),
 	require("zedd.plugins.lspconfig.lazyspec"),
 	require("zedd.plugins.lspkind.lazyspec"),
 	require("zedd.plugins.nvimtree.lazyspec"),

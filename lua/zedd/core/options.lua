@@ -14,7 +14,7 @@ vim.opt.cmdheight = 2 -- height of laststatus at the bottom
 vim.opt.laststatus = 1 -- show where are you in at the bottom
 vim.opt.statusline = "%{expand('%:~:.')}"
 vim.opt.clipboard = "unnamedplus" -- copy from nvim to  clipboard
-vim.opt.scrolloff = 4
+vim.opt.scrolloff = 10
 vim.opt.foldlevelstart = 99
 
 vim.opt.mouse = "a"
