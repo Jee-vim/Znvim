@@ -470,6 +470,10 @@
       "}"
     ]
   },
+  "console.log": {
+    "prefix": "clo",
+    "body": "console.log(${0})"
+  },
   "TrackBy Function": {
     "prefix": "a-trackby",
     "description": "TrackBy Function",

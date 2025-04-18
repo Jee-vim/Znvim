@@ -49,11 +49,20 @@ cmp.setup({
         fallback()
       end
     end, { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
+    ["<A-k>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_prev_item()
-      elseif vim.fn["vsnip#jumpable"](-1) == 1 then
+      elseif vim.fn["vsnip#available"](-1) == 1 then
         utils.feedkeys("<Plug>(vsnip-jump-prev)", "")
+      else
+        fallback()
+      end
+    end, { "i", "s" }),
+    ["<A-j>"] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif vim.fn["vsnip#available"](1) == 1 then
+        utils.feedkeys("<Plug>(vsnip-jump-next)", "")
       else
         fallback()
       end

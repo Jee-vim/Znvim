@@ -233,5 +233,13 @@
   "delete params": {
     "prefix": "delete-params",
     "body": "params.delete(\"$1\")\nwindow.history.pushState(null, '', '?' + params.toString())"
+  },
+  "children": {
+    "prefix": "children",
+    "body": "children: React.ReactNode"
+  },
+  "children props": {
+    "prefix": "children-props",
+    "body": "{ children }: { children: React.ReactNode }"
   }
 }

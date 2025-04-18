@@ -309,7 +309,7 @@
     "body": "else if (${1:condition}) {\n\t${0}\n}"
   },
   "Switch Statement": {
-    "prefix": "switch",
+    "prefix": "switch-case",
     "body": [
       "switch (${1:key}) {",
       "\tcase ${2:value}:",
@@ -346,6 +346,11 @@
     "prefix": "array",
     "body": "[\t${0}\t]",
     "description": "Array of obj"
+  },
+  "Generate Array": {
+    "prefix": "array-from",
+    "body": "Array.from({ length: ${1:5}})",
+    "description": "Generate array"
   },
   "Object": {
     "prefix": "obj",

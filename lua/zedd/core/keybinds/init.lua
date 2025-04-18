@@ -47,7 +47,7 @@ nmap("<S-m>", "[m")
 -- Replace
 nmap("<leader>n", [[:%s/\d\+/number/g]]) -- 2 -> number
 nmap("<leader>s", [[:%s/"[^"]*"/string/g]]) -- "hello" -> string
-nmap("<leader>b", [[:%s/\v(true|false)/boolean/g<CR>]]) -- true -> boolean
+nmap("<leader>m", [[:%s/\v(true|false)/boolean/g<CR>]]) -- true -> boolean
 nmap("<S-s>/", [[:%s//<left>]])
 
 -- Git
