@@ -179,17 +179,13 @@
     "prefix": "className",
     "body": "className=\"${1}\""
   },
+  "className props": {
+    "prefix": "className-props",
+    "body": "className?:string"
+  },
   "style": {
     "prefix": "style",
-    "body": "style={${1}}"
-  },
-  "useFetch hook create": {
-    "prefix": "useFetch-create",
-    "body": "import { useState, useEffect } from \"react\"\n\ninterface Fetch {\n\tdata: any\n}\n\nexport const useFetch = (url: string) => {\n\tconst [data, setData] = useState<Fetch[]>([]);\n\tconst [loading, setLoading] = useState(true);\n\tconst [error, setError] = useState<any>(null);\n\n\tuseEffect(() => {\n\t\tconst fetchData = async () => {\n\t\t\ttry {\n\t\t\t\tconst res = await fetch(url);\n\t\t\t\tif (!res.ok) {\n\t\t\t\t\tthrow new Error(\"Fetch failed\");\n\t\t\t\t}\n\n\t\t\t\tconst data = await res.json();\n\n\t\t\t\tsetData(data);\n\t\t\t\tsetLoading(false);\n\t\t\t} catch (error) {\n\t\t\t\tsetError(error);\n\t\t\t\tsetLoading(false);\n\t\t\t}\n\t\t}\n\t\tfetchData();\n\t},[url]);\n\n\treturn {\n\t\tdata,\n\t\tloading,\n\t\terror,\n\t}\n}"
-  },
-  "useFetch hook store": {
-    "prefix": "useFetch-store",
-    "body": "export default function ${TM_FILENAME_BASE}(){\n\tconst { data, loading, error } = useFetch(\"${1}\")\n\tif (loading) {\n\t\t<p>loading</p>\n\t}\n\tif (error) {\n\t\t<p>{error}</p>\n\t}\n\tconsole.log(data)\n\n\treturn (\n\t\t<div>data</div>\n\t)\n}"
+    "body": "style={{${1}: ${2}}}"
   },
   "onClick": {
     "prefix": "onclick",
@@ -224,7 +220,7 @@
   },
   "useSearchParams": {
     "prefix": "searchParams",
-    "body": "const searchParams = useSearchParams()\nconst params= new URLSearchParams(searchParams)\nconst $1"
+    "body": "const searchParams = useSearchParams()\nconst params= new URLSearchParams(searchParams)\nconst $1 = params.get(\"$1\");\n"
   },
   "set params": {
     "prefix": "set-params",
@@ -241,5 +237,13 @@
   "children props": {
     "prefix": "children-props",
     "body": "{ children }: { children: React.ReactNode }"
+  },
+  "params-props": {
+    "prefix": "params-props",
+    "body": "{ params }: {  params: Promise<{ slug: string }>  }"
+  },
+  "params-get": {
+    "prefix": "params-get",
+    "body": "const _p = await params;\nconst slug = _p.slug;\n"
   }
 }

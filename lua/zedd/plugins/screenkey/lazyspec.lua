@@ -10,8 +10,9 @@
 --
 return {
   "nvzone/showkeys",
-  cmd = "ShowkeysToggle",
+  event = "BufRead",
   config = function()
     require("zedd.plugins.screenkey.setup")
+    vim.cmd("ShowkeysToggle")
   end,
 }
