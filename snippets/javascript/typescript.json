@@ -78,6 +78,14 @@
     "prefix": "interface-extends-types",
     "body": "interface I$1 extends I$2 {\n\t$3: $4\n}"
   },
+  "declare interface": {
+    "prefix": "declare-interface",
+    "body": "declare interface I${1} {\n\t${2}: ${3}\n}"
+  },
+  "declare interface extends": {
+    "prefix": "declare-interface-extends",
+    "body": "declare interface I${1} extends I${2:} {${3} }"
+  },
   "props-types": {
     "prefix": "props-types",
     "body": "{\t$1\t}:{$1:${2:types}}"
@@ -114,5 +122,9 @@
   "set state array": {
     "prefix": "set-state-array",
     "body": "React.Dispatch<React.SetStateAction<string[]>>;"
+  },
+  "custom hook": {
+    "prefix": "hook",
+    "body": "export const use${1:HookName} = () => {\n\t${2}\n}"
   }
 }
