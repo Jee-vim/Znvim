@@ -1,9 +1,11 @@
-require("lspsaga").setup({
-	ui = {
-		border = "rounded",
-		code_action = "",
-		imp_sign = "",
-		actionfix = "",
-		collapse = "",
-	},
-})
+return function()
+  require("lspsaga").setup({
+    ui = {
+      border = "rounded",
+      code_action = "",
+      imp_sign = "",
+      actionfix = "",
+      collapse = "",
+    },
+  })
+end
