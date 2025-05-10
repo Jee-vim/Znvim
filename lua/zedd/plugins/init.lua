@@ -13,9 +13,9 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	require("zedd.plugins.cmp.lazyspec"),
-	-- require("zedd.plugins.codeium.lazyspec"),
-	require("zedd.plugins.neocodeium.lazyspec"),
+	require("zedd.plugins.codeium.lazyspec"),
 	require("zedd.plugins.colors.lazyspec"),
+	require("zedd.plugins.golf.lazyspec"),
 	require("zedd.plugins.comments.lazyspec"),
 	require("zedd.plugins.cursor.lazyspec"),
 	require("zedd.plugins.oil.lazyspec"),
