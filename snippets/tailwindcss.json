@@ -44,6 +44,18 @@
     "prefix": "flex-direction",
     "body": "flex-${1|row,col,row-reverse,col-reverse|}"
   },
+  "flexs center between": {
+    "prefix": "flex-center-between",
+    "body": "flex items-center justify-between"
+  },
+  "flexs center center": {
+    "prefix": "flex-center-center",
+    "body": "flex items-center justify-center"
+  },
+  "flex column": {
+    "prefix": "flex-column",
+    "body": "flex flex-col"
+  },
   "order": {
     "prefix": "order",
     "body": "order-${1|1,2,3,4,5,6,7,8,9,10,11,12,first,last,none|}"
@@ -117,11 +129,11 @@
     "body": "place-self-${1|auto,start,end,center,stretch|}"
   },
   "width": {
-    "prefix": "width",
+    "prefix": "w-",
     "body": "w-${1|[px],px,1,2,3,4,5,6,7,8,9,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,70,72,80,96|}"
   },
   "height": {
-    "prefix": "height",
+    "prefix": "h-",
     "body": "h-${1|[px],px,1,2,3,4,5,6,7,8,9,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,70,72,80,96|}"
   },
   "min width": {
