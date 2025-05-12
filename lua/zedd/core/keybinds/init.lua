@@ -20,7 +20,7 @@ nmap("ff", "vaBzf")
 nmap("fo", "zo")
 
 -- File manager
-nmap("<leader>e", "<cmd>NvimTreeFocus<cr>")
+nmap("<leader>e", "<cmd>Oil<cr>")
 
 -- Telescope
 nmap("<Leader>fo", "<CMD>Telescope oldfiles<CR>")
@@ -60,6 +60,7 @@ nmap("<leader>co", "<CMD>GitConflictChooseOurs<CR>")
 nmap("<leader>ct", "<CMD>GitConflictChooseTheirs<CR>")
 nmap("<leader>cn", "<CMD>GitConflictNextConflict<CR>")
 nmap("<leader>cp", "<CMD>GitConflictPrevConflict<CR>")
+nmap("<leader>cl", "<CMD>GitConflictListQf<CR>")
 
 -- Disable
 nmap("<up>", "<Nop>")

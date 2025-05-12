@@ -23,7 +23,7 @@ local plugins = {
 	-- require("zedd.plugins.indentmini.lazyspec"),
 	require("zedd.plugins.lspconfig.lazyspec"),
 	require("zedd.plugins.lspkind.lazyspec"),
-	require("zedd.plugins.nvimtree.lazyspec"),
+	-- require("zedd.plugins.nvimtree.lazyspec"),
 	require("zedd.plugins.telescope.lazyspec"),
 	require("zedd.plugins.treesitter.lazyspec"),
 	require("zedd.plugins.gitsigns.lazyspec"),
