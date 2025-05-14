@@ -5,7 +5,8 @@ local vmap = map.vmap
 
 -- Buffer
 nmap("<S-c>", "<CMD>bd<CR>") -- close
-nmap("<S-q>", "<CMD>%bd|e#<CR>") -- close all
+nmap("<S-q>", "o<Esc><CMD>%bd|e#<CR>") -- close all
+nmap("<A-Tab>", "<CMD>b#<CR>")
 
 -- LSP
 nmap("<A-r>", "<CMD>Lspsaga rename<CR>")
