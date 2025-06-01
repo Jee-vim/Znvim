@@ -4,7 +4,7 @@ local imap = map.imap
 local vmap = map.vmap
 
 -- Buffer
-nmap("<S-c>", "<CMD>bd<CR>") -- close
+nmap("<S-c>", "<CMD>bd<CR>")           -- close
 nmap("<S-q>", "o<Esc><CMD>%bd|e#<CR>") -- close all
 nmap("<A-Tab>", "<CMD>b#<CR>")
 
@@ -12,8 +12,9 @@ nmap("<A-Tab>", "<CMD>b#<CR>")
 nmap("<A-r>", "<CMD>Lspsaga rename<CR>")
 nmap("<A-h>", "<CMD>Lspsaga hover_doc<CR>")
 nmap("<A-i>", "<CMD>Lspsaga goto_definition<CR>")
-nmap("<A-j>", "<CMD>Lspsaga diagnostic_jump_next<CR>")
-nmap("<A-k>", "<CMD>Lspsaga diagnostic_jump_prev<CR>")
+nmap("<A-d>", "<CMD>lua vim.diagnostic.setloclist()<CR>")
+nmap("<A-j>", "<CMD>lua vim.diagnostic.goto_next()<CR>")
+nmap("<A-k>", "<CMD>lua vim.diagnostic.goto_prev()<CR>")
 
 -- Folding
 nmap("ft", "vatzf<CR>")
@@ -41,13 +42,9 @@ nmap("r", "<C-r>")
 nmap("<leader>a", "gg<S-v>G")
 nmap("<Esc>", ":noh<CR>")
 
--- Jump
-nmap("m", "]m")
-nmap("<S-m>", "[m")
-
 -- Replace
-nmap("<leader>n", [[:%s/\d\+/number/g]]) -- 2 -> number
-nmap("<leader>s", [[:%s/"[^"]*"/string/g]]) -- "hello" -> string
+nmap("<leader>n", [[:%s/\d\+/number/g]])                -- 2 -> number
+nmap("<leader>s", [[:%s/"[^"]*"/string/g]])             -- "hello" -> string
 nmap("<leader>m", [[:%s/\v(true|false)/boolean/g<CR>]]) -- true -> boolean
 nmap("<S-s>/", [[:%s//<left>]])
 

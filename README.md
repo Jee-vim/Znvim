@@ -1,24 +1,18 @@
-## Znvim
+# Znvim
 fast as f***
 
-### Required installation
+## Required installation
 
+#### Language Server
 ```
-npm i -g prettier @johnnymorganz/stylua-bin
+npm i -g typescript-language-server typescript vscode-langservers-extracted prettier lua-language-server
 ```
-```
-npm i -g typescript-language-server typescript
-```
-```
-typescript-language-server --stdio
-```
-or see [this](https://github.com/typescript-language-server/typescript-language-server)
 
 ## FYI
 type `:Keybinds` to see custome keybinds
 
 
-## Error 
+## Troubleshoot
 
 ### E13: File Exist (add ! to ovveride)
 - run `echo (nvim --cmd 'echo stdpath("data")' --cmd 'q' | tail -n 1)` to known the path
