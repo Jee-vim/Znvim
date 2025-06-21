@@ -9,9 +9,10 @@ nmap("<S-q>", "o<Esc><CMD>%bd|e#<CR>") -- close all
 nmap("<A-Tab>", "<CMD>b#<CR>")
 
 -- LSP
-nmap("<A-r>", "<CMD>Lspsaga rename<CR>")
-nmap("<A-h>", "<CMD>Lspsaga hover_doc<CR>")
-nmap("<A-i>", "<CMD>Lspsaga goto_definition<CR>")
+nmap("<A-r>", "<CMD>lua vim.lsp.buf.rename()<CR>")
+nmap("<A-h>", "<CMD>lua vim.lsp.buf.hover()<CR>")
+nmap("<A-i>", "<CMD>lua vim.lsp.buf.implementation()<CR>")
+nmap("<A-f>", "<CMD>lua vim.lsp.buf.format({ async = true })<CR>")
 nmap("<A-d>", "<CMD>lua vim.diagnostic.setloclist()<CR>")
 nmap("<A-j>", "<CMD>lua vim.diagnostic.goto_next()<CR>")
 nmap("<A-k>", "<CMD>lua vim.diagnostic.goto_prev()<CR>")

@@ -1,6 +1,6 @@
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
-vim.g.netrw_banner = 0 -- hide banner :Ex
+vim.g.netrw_banner = 0 -- hide banner :Exininin
 
 vim.g.loaded_netrw = 1          -- Disable netrw
 vim.g.loaded_netrwPlugin = 1
