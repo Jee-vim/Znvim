@@ -126,5 +126,33 @@
   "custom hook": {
     "prefix": "hook",
     "body": "export const use${1:HookName} = () => {\n\t${2}\n}"
+  },
+  "console.log": {
+    "prefix": "clo",
+    "body": "console.log(${0})"
+  },
+  "console.log with string": {
+    "prefix": "clo-string",
+    "body": "console.log(${0}, '${0}')"
+  },
+  "console.log with JSON.stringify": {
+    "prefix": "clo-json",
+    "body": "console.log(JSON.stringify(${0}))"
+  },
+  "console.debug": {
+    "prefix": "clo-debug",
+    "body": "console.debug(${0})"
+  },
+  "console.debug with JSON.stringify": {
+    "prefix": "clod-jsonStringify",
+    "body": "console.debug(JSON.stringify(${0}))"
+  },
+  "console.log a variable": {
+    "prefix": "clo-var",
+    "body": "console.log(\"${0}:\", ${0})"
+  },
+  "console.error": {
+    "prefix": "clo-err",
+    "body": "console.error(${0})"
   }
 }
