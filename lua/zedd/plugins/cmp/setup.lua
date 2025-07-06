@@ -20,7 +20,6 @@ cmp.setup({
     { name = "nvim_lsp" },
     { name = "path" },
     { name = "vsnip" },
-    { name = "nvim_lua" },
     {
       name = "buffer",
       option = {

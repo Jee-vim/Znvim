@@ -15,7 +15,7 @@ vim.lsp.config("*", {
   },
 })
 vim.diagnostic.config({
-  virtual_lines = true,
+  virtual_lines = false,
   virtual_text = false,
   underline = false,
   update_in_insert = false,
@@ -26,8 +26,8 @@ vim.diagnostic.config({
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = "*.nix",
+  pattern = { "*.nix", "*.ts", "*.tsx", "*.css", "*.lua" },
   callback = function()
-    vim.lsp.buf.format()
+    vim.lsp.buf.format({ async = true })
   end,
 })

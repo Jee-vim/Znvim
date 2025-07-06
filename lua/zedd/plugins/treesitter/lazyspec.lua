@@ -6,7 +6,7 @@ return {
     require("zedd.plugins.treesitter.setup")
     require("zedd.plugins.treesitter.command")
 	end,
-	dependencies = {
-		"https://github.com/nvim-treesitter/playground",
-	},
+	-- dependencies = {
+	-- 	"https://github.com/nvim-treesitter/playground",
+	-- },
 }
