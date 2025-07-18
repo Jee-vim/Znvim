@@ -20,6 +20,7 @@ local plugins = {
 	-- require("zedd.plugins.cursor.lazyspec"),
 	require("zedd.plugins.oil.lazyspec"),
 	require("zedd.plugins.gruvbox.lazyspec"),
+	require("zedd.plugins.markdown.lazyspec"),
 	-- require("zedd.plugins.ollama.lazyspec"),
 	-- require("zedd.plugins.indentmini.lazyspec"),
 	-- require("zedd.plugins.hardtime.lazyspec"),
