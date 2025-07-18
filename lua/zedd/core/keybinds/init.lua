@@ -17,6 +17,12 @@ nmap("<A-d>", "<CMD>lua vim.diagnostic.setloclist()<CR>")
 nmap("<A-j>", "<CMD>lua vim.diagnostic.goto_next()<CR>")
 nmap("<A-k>", "<CMD>lua vim.diagnostic.goto_prev()<CR>")
 
+-- Center Screen on Jumping
+nmap("n", "nzzzv")
+nmap("N", "Nzzzv")
+nmap("<C-d>", "<C-d>zz")
+nmap("<C-u>", "<C-u>zz")
+
 -- Folding
 nmap("ft", "vatzf<CR>")
 nmap("ff", "vaBzf")
@@ -35,13 +41,15 @@ nmap("<Leader><Leader>", "<CMD>Telescope buffers<CR>")
 -- Custome
 imap("<C-f>", "${}<left>")
 imap("<", "<>")
-vmap("<S-j>", ":m '>+1<CR>gv=gv")
-vmap("<S-k>", ":m '<-2<CR>gv=gv")
-nmap("<leader>ww", "<CMD>w<CR>")
-nmap("<leader>wa", "<CMD>wa<CR>")
-nmap("r", "<C-r>")
+vmap("<S-j>", ":m '>+1<CR>gv=gv") -- move line bottom
+vmap("<S-k>", ":m '<-2<CR>gv=gv") -- move line top
+nmap("<leader>ww", "<CMD>w<CR>")  -- save
+nmap("<leader>wa", "<CMD>wa<CR>") -- save all
+nmap("r", "<C-r>")                -- just remap the undo
 nmap("<leader>a", "gg<S-v>G")
-nmap("<Esc>", ":noh<CR>")
+nmap("<Esc>", ":noh<CR>")         -- clear higlight and back to normal
+nmap("<C-l>", "$")                -- jump to end of line
+
 
 -- Replace
 nmap("<leader>n", [[:%s/\d\+/number/g]])                -- 2 -> number
