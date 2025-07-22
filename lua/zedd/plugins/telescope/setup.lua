@@ -86,8 +86,8 @@ telescope.setup({
     buffers = {
       initial_mode = "normal",
       select_current = false,
-      previewer = false,
-      sort_lastused = false,
+      previewer = true,
+      sort_lastused = true,
     },
   },
 })

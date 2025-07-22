@@ -30,6 +30,7 @@ nmap("fo", "zo")
 
 -- File manager
 nmap("<leader>e", "<cmd>Oil<cr>")
+nmap("<leader>o", "<cmd>Oil .<cr>") -- go to parent dir
 
 -- Telescope
 nmap("<Leader>fo", "<CMD>Telescope oldfiles<CR>")
@@ -49,6 +50,7 @@ nmap("r", "<C-r>")                -- just remap the undo
 nmap("<leader>a", "gg<S-v>G")
 nmap("<Esc>", ":noh<CR>")         -- clear higlight and back to normal
 nmap("<C-l>", "$")                -- jump to end of line
+nmap("<C-e>", [[:s/\([a-zA-Z]\)\(-\)\([a-zA-Z]\)/\1\u\3/g<CR>]]) -- kebab-case to camelCase
 
 
 -- Replace

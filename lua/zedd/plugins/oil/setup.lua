@@ -1,17 +1,26 @@
 require("oil").setup({
   delete_to_trash = true,
   watch_for_changes = true,
-  win_options = {
-    signcolumn = "yes:2",
-  },
   view_options = {
-    is_hidden_file = function(name, bufnr)
-      local dir = require("oil").get_current_dir(bufnr)
-      local is_dotfile = vim.startswith(name, ".") and name ~= ".."
-      -- if no local directory (e.g. for ssh connections), just hide dotfiles
-      if not dir then
-        return is_dotfile
-      end
+    is_hidden_file = function(name)
+      local visible_dotfiles = {
+        [".env"] = true,
+        [".env.local"] = true,
+      }
+
+      -- Hide all dotfiles except those explicitly allowed
+      local is_dotfile = vim.startswith(name, ".") and name ~= ".." and not visible_dotfiles[name]
+
+      -- Hide specific folders
+      local hidden_names = {
+        ["node_modules"] = true,
+        ["dist"] = true,
+        ["build"] = true,
+        ["next-env.d.ts"] = true,
+        ["commitlint.config.js"] = true,
+      }
+
+      return is_dotfile or hidden_names[name] == true
     end,
   },
 })
