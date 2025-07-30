@@ -17,7 +17,11 @@ require("oil").setup({
         ["dist"] = true,
         ["build"] = true,
         ["next-env.d.ts"] = true,
-        ["commitlint.config.js"] = true,
+        ["tsconfig.tsbuildinfo"] = true,
+        ["pnpm-lock.yaml"] = true,
+        ["npm-lock.yaml"] = true,
+        ["yarn-lock.yaml"] = true,
+
       }
 
       return is_dotfile or hidden_names[name] == true
