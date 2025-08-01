@@ -51,11 +51,6 @@
     ],
     "description": "Property setter"
   },
-  "Function Statement": {
-    "prefix": "function",
-    "body": ["function ${1:name}(${2:params}:${3:type}) {", "\t$0", "}"],
-    "description": "Function Statement"
-  },
   "Region Start": {
     "prefix": "#region",
     "body": ["//#region $0"],
@@ -66,42 +61,29 @@
     "body": ["//#endregion"],
     "description": "Folding Region End"
   },
-  "type": {
+  "type types": {
     "prefix": "type-types",
     "body": "type T${1} = {\n\t${2}: ${3}\n}"
   },
   "interface": {
-    "prefix": "interface-types",
+    "prefix": "itf",
     "body": "interface I${1} {\n\t${2}: ${3}\n}"
   },
   "interface extends": {
-    "prefix": "interface-extends-types",
+    "prefix": "itf-ext",
     "body": "interface I$1 extends I$2 {\n\t$3: $4\n}"
   },
   "declare interface": {
-    "prefix": "declare-interface",
+    "prefix": "dec-itf",
     "body": "declare interface I${1} {\n\t${2}: ${3}\n}"
   },
   "declare interface extends": {
-    "prefix": "declare-interface-extends",
+    "prefix": "dec-itf-ext",
     "body": "declare interface I${1} extends I${2:} {${3} }"
   },
   "props-types": {
     "prefix": "props-types",
     "body": "{\t$1\t}:{$1:${2:types}}"
-  },
-  "event Change": {
-    "prefix": "event-change",
-    "body": "React.ChangeEvent<HTMLInputElement>"
-  },
-  "event Form": {
-    "prefix": "event-form",
-    "body": "React.FormEvent<HTMLFormElement>"
-  },
-  "handle events ": {
-    "prefix": "handle-func",
-    "body": ["const handle${1:func} = () => {", "\t$2", "}"],
-    "description": "handle events"
   },
   "handle change": {
     "prefix": "handle-change",
@@ -114,49 +96,5 @@
   "set state ": {
     "prefix": "set-state",
     "body": "React.Dispatch<React.SetStateAction<$1>>;"
-  },
-  "set state boolean": {
-    "prefix": "set-state-boolean",
-    "body": "React.Dispatch<React.SetStateAction<boolean>>"
-  },
-  "set state array": {
-    "prefix": "set-state-array",
-    "body": "React.Dispatch<React.SetStateAction<string[]>>;"
-  },
-  "custom hook": {
-    "prefix": "hook",
-    "body": "export const use${1:HookName} = () => {\n\t${2}\n}"
-  },
-  "create obj": {
-    "prefix": "obj",
-    "body": "const obj = {\n\t${1}\n}"
-  },
-  "console.log": {
-    "prefix": "clo",
-    "body": "console.log(${0})"
-  },
-  "console.log with string": {
-    "prefix": "clo-string",
-    "body": "console.log(${0}, '${0}')"
-  },
-  "console.log with JSON.stringify": {
-    "prefix": "clo-json",
-    "body": "console.log(JSON.stringify(${0}))"
-  },
-  "console.debug": {
-    "prefix": "clo-debug",
-    "body": "console.debug(${0})"
-  },
-  "console.debug with JSON.stringify": {
-    "prefix": "clod-jsonStringify",
-    "body": "console.debug(JSON.stringify(${0}))"
-  },
-  "console.log a variable": {
-    "prefix": "clo-var",
-    "body": "console.log(\"${0}:\", ${0})"
-  },
-  "console.error": {
-    "prefix": "clo-err",
-    "body": "console.error(${0})"
   }
 }
