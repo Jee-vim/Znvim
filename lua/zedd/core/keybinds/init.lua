@@ -42,6 +42,7 @@ nmap("<Leader><Leader>", "<CMD>Telescope buffers<CR>")
 -- Custome
 imap("<C-f>", "${}<left>")
 imap("<", "<>")
+imap("qq", "<Esc>")
 vmap("<S-j>", ":m '>+1<CR>gv=gv") -- move line bottom
 vmap("<S-k>", ":m '<-2<CR>gv=gv") -- move line top
 nmap("<leader>ww", "<CMD>w<CR>")  -- save
@@ -70,10 +71,3 @@ nmap("<leader>ct", "<CMD>GitConflictChooseTheirs<CR>")
 nmap("<leader>cn", "<CMD>GitConflictNextConflict<CR>")
 nmap("<leader>cp", "<CMD>GitConflictPrevConflict<CR>")
 nmap("<leader>cl", "<CMD>GitConflictListQf<CR>")
-
--- Disable
-nmap("<up>", "<Nop>")
-nmap("<left>", "<Nop>")
-nmap("<right>", "<Nop>")
-nmap("<down>", "<Nop>")
-nmap("<C-z>", "<Nop>")
