@@ -95,6 +95,6 @@
   },
   "set state ": {
     "prefix": "set-state",
-    "body": "React.Dispatch<React.SetStateAction<$1>>;"
+    "body": "React.Dispatch<React.SetStateAction<$1>>"
   }
 }

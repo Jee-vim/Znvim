@@ -59,12 +59,12 @@
     "description": "While Statement"
   },
   "Set Timeout Function": {
-    "prefix": "settimeout",
+    "prefix": "set-timeout",
     "body": ["setTimeout(() => {", "\t$0", "}, ${1:timeout});"],
     "description": "Set Timeout Function"
   },
   "Set Interval Function": {
-    "prefix": "setinterval",
+    "prefix": "set-interval",
     "body": ["setInterval(() => {", "\t$0", "}, ${1:interval});"],
     "description": "Set Interval Function"
   },
@@ -98,7 +98,7 @@
   },
   "arrow function ": {
     "prefix": "fn-arrow",
-    "body": "({$1}) => {$2}"
+    "body": "($1) => {$2}"
   },
   "return new object": {
     "prefix": "rtn-new-obj",
@@ -214,11 +214,11 @@
     "body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n}"
   },
   "try/finally": {
-    "prefix": "tryFinally",
+    "prefix": "try-finnaly",
     "body": "try {\n\t${0}\n} finally {\n\t\n}"
   },
   "try/catch/finally": {
-    "prefix": "tcf",
+    "prefix": "trcf",
     "body": "try {\n\t${0}\n} catch (${1:err}) {\n\t\n} finally {\n\t\n}"
   }
 }

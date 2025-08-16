@@ -41,18 +41,13 @@ nmap("<Leader><Leader>", "<CMD>Telescope buffers<CR>")
 
 -- Custome
 imap("<C-f>", "${}<left>")
-imap("<", "<>")
-imap("qq", "<Esc>")
 vmap("<S-j>", ":m '>+1<CR>gv=gv") -- move line bottom
 vmap("<S-k>", ":m '<-2<CR>gv=gv") -- move line top
 nmap("<leader>ww", "<CMD>w<CR>")  -- save
-nmap("<leader>wa", "<CMD>wa<CR>") -- save all
 nmap("r", "<C-r>")                -- just remap the undo
 nmap("<leader>a", "gg<S-v>G")
 nmap("<Esc>", ":noh<CR>")         -- clear higlight and back to normal
-nmap("<C-l>", "$")                -- jump to end of line
 nmap("<C-e>", [[:s/\([a-zA-Z]\)\(-\)\([a-zA-Z]\)/\1\u\3/g<CR>]]) -- kebab-case to camelCase
-
 
 -- Replace
 nmap("<leader>n", [[:%s/\d\+/number/g]])                -- 2 -> number
