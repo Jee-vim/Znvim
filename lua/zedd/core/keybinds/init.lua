@@ -40,14 +40,22 @@ nmap("<Leader>fd", "<CMD>Telescope diagnostics<CR>")
 nmap("<Leader><Leader>", "<CMD>Telescope buffers<CR>")
 
 -- Custome
-imap("<C-f>", "${}<left>")
 vmap("<S-j>", ":m '>+1<CR>gv=gv") -- move line bottom
 vmap("<S-k>", ":m '<-2<CR>gv=gv") -- move line top
 nmap("<leader>ww", "<CMD>w<CR>")  -- save
-nmap("r", "<C-r>")                -- just remap the undo
+nmap("r", "<C-r>")                -- undo
 nmap("<leader>a", "gg<S-v>G")
 nmap("<Esc>", ":noh<CR>")         -- clear higlight and back to normal
 nmap("<C-e>", [[:s/\([a-zA-Z]\)\(-\)\([a-zA-Z]\)/\1\u\3/g<CR>]]) -- kebab-case to camelCase
+
+-- Auto Pairs
+imap("$", "${}<left>")
+imap("{", "{}<left>")
+imap("(", "()<left>")
+imap("[", "[]<left>")
+imap("<", "<><left>")
+imap("'", "''<left>")
+imap('"', '""<left>')
 
 -- Replace
 nmap("<leader>n", [[:%s/\d\+/number/g]])                -- 2 -> number
