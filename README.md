@@ -1,20 +1,52 @@
 # Znvim
-fast as f***
 
-## Required installation
+**Znvim** is a blazing-fast and highly customizable Neovim configuration tailored for speed, efficiency, and modern development workflows.
 
-#### Language Server
+---
+
+## 🚀 Features
+
+- **Super Fast Startup**: Minimal plugins, optimized config.
+- **Modern LSP Support**: Out-of-the-box support for TypeScript, Lua, Prettier, and more.
+- **Custom Keybinds**: Navigate, edit, and refactor with intuitive shortcuts (`:Keybinds` for a full list).
+- **Custom Snippet**: Fast and customizeable (you can add or delete snippet or make new snippet file).
+
+---
+
+## 📦 Installation
+
+### 1. Clone Znvim
+
+```sh
+git clone https://github.com/Jee-vim/Znvim ~/.config/nvim
 ```
+
+### 2. Install Required Language Servers
+
+```sh
 npm i -g typescript-language-server typescript vscode-langservers-extracted prettier lua-language-server
 ```
 
-## FYI
-type `:Keybinds` to see custome keybinds
+---
 
+## 💡 Contribution
 
-## Troubleshoot
+Got an idea, improvement, or bug fix? Pull requests and issues are welcome!
 
-### E13: File Exist (add ! to ovveride)
-- run `echo (nvim --cmd 'echo stdpath("data")' --cmd 'q' | tail -n 1)` to known the path
-- then create a folder followed by the result above ex: `mkdir -p /home/jee/.local/share/nvim/backup`
-if it not work try ask me or search on your own or ask in comunity:)
+---
+
+## 📚 Resources
+
+- [Neovim Documentation](https://neovim.io/)
+- [LSP Setup Guide](https://github.com/neovim/nvim-lspconfig)
+
+---
+
+## 🙋 FAQ
+
+**Q:** How do I list all keybindings?
+**A:** Type `:Keybinds` in Neovim.
+
+---
+
+Enjoy lightning-fast editing with Znvim! ⚡
