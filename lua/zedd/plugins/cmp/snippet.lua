@@ -20,4 +20,5 @@ vim.g.vsnip_filetypes = {
   html = { "angular/html" },
   http = { "http" },
   c = { "c" },
+  zig = { "zig" },
 }

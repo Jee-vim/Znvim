@@ -59,15 +59,6 @@ nmap("<leader>s", [[:%s/"[^"]*"/string/g]])             -- "hello" -> string
 nmap("<leader>m", [[:%s/\v(true|false)/boolean/g<CR>]]) -- true -> boolean
 nmap("<S-s>/", [[:%s//<left>]])
 
--- Auto Pairs
-imap("$", "${}<left>")
-imap("{", "{}<left>")
-imap("(", "()<left>")
-imap("[", "[]<left>")
-imap("<", "<><left>")
-imap("'", "''<left>")
-imap('"', '""<left>')
-
 -- Center Screen on Jumping
 nmap("n", "nzzzv")
 nmap("N", "Nzzzv")

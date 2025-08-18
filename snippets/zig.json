@@ -1,0 +1,27 @@
+{
+  "import": {
+    "prefix": "impt-",
+    "body": "const $1 = @import(\"$2\");",
+    "description": "import library"
+  },
+  "import std": {
+    "prefix": "impt-std",
+    "body": "const std = @import(\"std\");",
+    "description": "import standard library"
+  },
+  "print debug": {
+    "prefix": "prt-deb",
+    "body": "std.debug.print(\"$1\", .{$1});",
+    "description": "print debug"
+  },
+  "data types unsigned": {
+    "prefix": "u-",
+    "body": "u-${1|8,16,32,64|}",
+    "description": "min 0, (255) (65,535) (4,294,967,295) (18,446,073,709,551,615)"
+  },
+  "data types signed": {
+    "prefix": "i-",
+    "body": "i-${1|8,16,32,64|}",
+    "description": "(-128,127) (-32,768 32,767) (-2,147,483,648 2,147,483,647) (-9,223,372,036,854,775,808 9,223,372,036,854,775,807)"
+  }
+} 
