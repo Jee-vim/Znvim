@@ -6,6 +6,7 @@ All notable changes to this configuration will be documented in this file.
 (Refactor) - remove autopairs custome keybind
 (Improvment) - add zig custom snippet
 (Improvment) - add list ignore image for telescope
+(Improvment) - update readme (adding screenshot)
 
 (Improvment) - update keybind (rmv unused)
 (Improvment) - update js snippet

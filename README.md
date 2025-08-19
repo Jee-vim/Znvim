@@ -6,10 +6,23 @@
 
 ## 🚀 Features
 
-- **Super Fast Startup**: Minimal plugins, optimized config.
-- **Modern LSP Support**: Out-of-the-box support for TypeScript, Lua, Prettier, and more.
-- **Custom Keybinds**: Navigate, edit, and refactor with intuitive shortcuts (`:Keybinds` for a full list).
-- **Custom Snippet**: Fast and customizeable (you can add or delete snippet or make new snippet file).
+- **⚡ Instant Startup**: Lean plugin set and turbocharged config for the fastest launch you've ever seen.
+- **🧠 Next-Gen LSP**: Effortless coding with pre-configured support for TypeScript, Lua, Prettier, and more.
+- **🎯 Smart Keybinds**: Refined shortcuts for navigation, editing, and refactoring (discover them all with `:Keybinds`).
+- **✂️ Dynamic Snippets**: Add, tweak, or create your own snippet files for ultimate code speed.
+- **🔭 Custom Telescope UI**: Sleek, intuitive fuzzy search—find files, projects, and more in a flash.
+- **🎨 Beautiful & Minimal UI**: Clean interface designed to keep you focused.
+- **🛠️ Effortless Customization**: Tweak themes, settings, and plugins to fit your workflow.
+
+---
+
+## 🖼️ Screenshots
+
+![Startup](screenshot/lazy-startup.png)
+![Plugin Event](screenshot/lazy-event-plugin.png)
+![UI](screenshot/completion-look-filetree.png)
+![Telescope Find Files and Live Grep](screenshot/ff-lg.png)
+![Telescope Tab Management and old files](screenshot/tab-of.png)
 
 ---
 
@@ -46,6 +59,9 @@ Got an idea, improvement, or bug fix? Pull requests and issues are welcome!
 
 **Q:** How do I list all keybindings?
 **A:** Type `:Keybinds` in Neovim.
+
+**Q:** Can I add my own snippets?  
+**A:** Absolutely! Check out the snippets directory and customize to your heart’s content.
 
 ---
 
