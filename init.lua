@@ -12,8 +12,6 @@ vim.g.loaded_zipPlugin = 1      -- Disable zipPlugin.vim
 vim.g.loaded_gzip = 1           -- Disable gzip.vim 
 vim.g.loaded_man = 1            -- Disable man.lua 
 
--- vim.cmd.colorscheme("habamax")
-
 require("zedd.core.lsp")
 require("zedd.core.options")
 require("zedd.core.keybinds")

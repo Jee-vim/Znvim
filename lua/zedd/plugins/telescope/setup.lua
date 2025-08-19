@@ -20,7 +20,7 @@ telescope.setup({
     selection_caret = " ❱ ",
     initial_mode = "insert",
     selection_strategy = "reset",
-    file_ignore_patterns = { "^node_modules/", ".*lock.*" },
+    file_ignore_patterns = { "^node_modules/", ".*lock.*", "%.ico$", "%.png$", "%.svg$", "%.jpg$", "%.jpeg$" },
     file_sorter = sorters.get_fzy_sorter,
     generic_sorter = sorters.get_generic_fzy_sorter,
     path_display = { "absolute" },
@@ -85,9 +85,9 @@ telescope.setup({
     },
     buffers = {
       initial_mode = "normal",
-      select_current = false,
+      select_current = true,
       previewer = true,
-      sort_lastused = true,
+      sort_lastused = false,
     },
   },
 })
