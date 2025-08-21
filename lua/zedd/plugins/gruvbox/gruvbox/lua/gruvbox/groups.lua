@@ -149,10 +149,10 @@ local M = {
   DiagnosticVirtualTextWarn = { fg = c.yellow, bg = c.yellow },
   DiagnosticVirtualTextInfo = { fg = c.blue, bg = c.blue },
   DiagnosticVirtualTextHint = { fg = c.aqua, bg = c.aqua },
-  DiagnosticLineNrError = { fg = c.bright_red, bg = c.bright_red },
-  DiagnosticLineNrWarn = { fg = c.yellow, bg = c.yellow },
-  DiagnosticLineNrInfo = { fg = c.blue, bg = c.blue },
-  DiagnosticLineNrHint = { fg = c.aqua, bg = c.aqua },
+  -- DiagnosticLineNrError = { fg = c.bright_red, bg = c.bright_red },
+  -- DiagnosticLineNrWarn = { fg = c.yellow, bg = c.yellow },
+  -- DiagnosticLineNrInfo = { fg = c.blue, bg = c.blue },
+  -- DiagnosticLineNrHint = { fg = c.aqua, bg = c.aqua },
   --
   --See :h treesitter-highlight-groups
   ["@text.literal"] = { link = "Comment" },

@@ -1,63 +1,66 @@
 local map = require("zedd.core.keybinds.keymap")
 local nmap = map.nmap
-local imap = map.imap
 local vmap = map.vmap
 
 -- Buffer
-nmap("<S-c>", "<CMD>bd<CR>")           -- close
-nmap("<S-q>", "o<Esc><CMD>%bd|e#<CR>") -- close all
-nmap("<A-Tab>", "<CMD>b#<CR>")
+nmap("<leader>bd", "<CMD>bd<CR>", { desc = "Close buffer" })
+nmap("<leader>ba", "<CMD>%bd|e#<CR>", { desc = "Close all buffers except current" })
+nmap("<leader>bb", "<CMD>b#<CR>", { desc = "Previous buffer" })
 
 -- LSP
-nmap("<A-r>", "<CMD>lua vim.lsp.buf.rename()<CR>")
-nmap("<A-h>", "<CMD>lua vim.lsp.buf.hover()<CR>")
-nmap("<A-i>", "<CMD>lua vim.lsp.buf.definition()<CR>")
-nmap("<A-f>", "<CMD>lua vim.lsp.buf.format({ async = async })<CR>")
-nmap("<A-d>", "<CMD>lua vim.diagnostic.setloclist()<CR>")
-nmap("<A-j>", "<CMD>lua vim.diagnostic.goto_next()<CR>")
-nmap("<A-k>", "<CMD>lua vim.diagnostic.goto_prev()<CR>")
+nmap("<leader>lr", vim.lsp.buf.rename, { desc = "Rename symbol" })
+nmap("<leader>lh", vim.lsp.buf.hover, { desc = "Hover docs" })
+nmap("<leader>ld", vim.lsp.buf.definition, { desc = "Go to definition" })
+nmap("<leader>lf", function() vim.lsp.buf.format({ async = true }) end, { desc = "Format buffer" })
+nmap("<leader>ll", "<CMD>lua vim.diagnostic.setloclist()<CR><CMD>lua require('telescope.builtin').loclist({winid=0})<CR>",
+  { desc = "Diagnostics in Telescope" })
+nmap("<leader>lj", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+nmap("<leader>lk", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
 
 -- Git
-nmap("<leader>gd", "<CMD>Gitsign toggle_deleted<CR>")
-nmap("<leader>gcl", "<CMD>Gitsign toggle_current_line_blame<CR>")
-nmap("<leader>gbl", "<CMD>Gitsign blame_line<CR>")
-nmap("<leader>c0", "<CMD>GitConflictChooseNone<CR>")
-nmap("<leader>cb", "<CMD>GitConflictChooseBoth<CR>")
-nmap("<leader>co", "<CMD>GitConflictChooseOurs<CR>")
-nmap("<leader>ct", "<CMD>GitConflictChooseTheirs<CR>")
-nmap("<leader>cn", "<CMD>GitConflictNextConflict<CR>")
-nmap("<leader>cp", "<CMD>GitConflictPrevConflict<CR>")
-nmap("<leader>cl", "<CMD>GitConflictListQf<CR>")
+nmap("<leader>gd", "<CMD>Gitsigns toggle_deleted<CR>", { desc = "Toggle deleted" })
+nmap("<leader>gb", "<CMD>Gitsigns blame_line<CR>", { desc = "Blame line" })
+
+-- Conflicts
+nmap("<leader>g0", "<CMD>GitConflictChooseNone<CR>")
+nmap("<leader>go", "<CMD>GitConflictChooseOurs<CR>")
+nmap("<leader>gt", "<CMD>GitConflictChooseTheirs<CR>")
+nmap("<leader>gb", "<CMD>GitConflictChooseBoth<CR>")
+nmap("<leader>gn", "<CMD>GitConflictNextConflict<CR>")
+nmap("<leader>gp", "<CMD>GitConflictPrevConflict<CR>")
+nmap("<leader>gq", "<CMD>GitConflictListQf<CR>")
 
 -- Folding
-nmap("ft", "vatzf<CR>")
-nmap("ff", "vaBzf")
-nmap("fo", "zo")
+nmap("<leader>zf", "vatzf<CR>")
+nmap("<leader>zF", "vaBzf")
+nmap("<leader>zo", "zo")
 
 -- File manager
-nmap("<leader>e", "<cmd>Oil<cr>")
-nmap("<leader>o", "<cmd>Oil .<cr>") -- go to parent dir
+nmap("<leader>e", "<cmd>Oil<cr>", { desc = "Open Oil" })
+nmap("<leader>E", "<cmd>Oil .<cr>", { desc = "Open Oil parent dir" })
 
 -- Telescope
 nmap("<Leader>fo", "<CMD>Telescope oldfiles<CR>")
 nmap("<Leader>ff", "<CMD>Telescope find_files<CR>")
 nmap("<Leader>lg", "<CMD>Telescope live_grep<CR>")
 nmap("<Leader>fd", "<CMD>Telescope diagnostics<CR>")
-nmap("<Leader><Leader>", "<CMD>Telescope buffers<CR>")
+nmap("<Leader>fb", "<CMD>Telescope buffers<CR>")
 
 -- Custome
-vmap("<S-j>", ":m '>+1<CR>gv=gv") -- move line bottom
-vmap("<S-k>", ":m '<-2<CR>gv=gv") -- move line top
 nmap("<leader>w", "<CMD>w<CR>")
-nmap("<leader>q", "<CMD>q<CR>")
-nmap("r", "<C-r>")                -- undo
 nmap("<leader>a", "gg<S-v>G")
-nmap("<Esc>", ":noh<CR>")         -- clear higlight and back to normal
-nmap("<C-e>", [[:s/\([a-zA-Z]\)\(-\)\([a-zA-Z]\)/\1\u\3/g<CR>]]) -- kebab-case to camelCase
-nmap("<leader>n", [[:%s/\d\+/number/g]])                -- 2 -> number
-nmap("<leader>s", [[:%s/"[^"]*"/string/g]])             -- "hello" -> string
-nmap("<leader>m", [[:%s/\v(true|false)/boolean/g<CR>]]) -- true -> boolean
+nmap("<leader>q", "<CMD>q<CR>")
+vmap("<S-j>", ":m '>+1<CR>gv=gv")     -- move line bottom
+vmap("<S-k>", ":m '<-2<CR>gv=gv")     -- move line top
 nmap("<S-s>/", [[:%s//<left>]])
+nmap("U", "<C-r>", { desc = "Redo" }) -- Vim default `U` is useless anyway
+nmap("<Esc>", ":noh<CR>")             -- clear higlight and back to normal
+
+-- String substitutions
+nmap("<leader>cc", [[:s/\([a-zA-Z]\)\(-\)\([a-zA-Z]\)/\1\u\3/g<CR>]]) -- kebab → camel
+nmap("<leader>nn", [[:%s/\d\+/number/g]])                             -- numbers → "number"
+nmap("<leader>ss", [[:%s/"[^"]*"/string/g]])                          -- quoted → "string"
+nmap("<leader>br", [[:%s/\v(true|false)/boolean/g<CR>]])              -- booleans
 
 -- Center Screen on Jumping
 nmap("n", "nzzzv")
