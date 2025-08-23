@@ -1,6 +1,7 @@
 require("oil").setup({
   delete_to_trash = true,
   watch_for_changes = true,
+  win_options = { signcolumn = "auto:2" },
   view_options = {
     is_hidden_file = function(name)
       local visible_dotfiles = {
@@ -27,4 +28,17 @@ require("oil").setup({
       return is_dotfile or hidden_names[name] == true
     end,
   },
+})
+
+vim.api.nvim_create_autocmd({ "ColorScheme", "FileType" }, {
+  pattern = { "oil" },
+  callback = function()
+    -- remove bg from the sign area itself
+    vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
+    pcall(function()
+      for _, hl in pairs(require("oil-git-status").highlight_groups) do
+        vim.api.nvim_set_hl(0, hl.hl_group, { bg = "NONE" })
+      end
+    end)
+  end,
 })

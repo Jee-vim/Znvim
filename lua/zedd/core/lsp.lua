@@ -3,6 +3,7 @@ vim.lsp.enable({
   "lua_ls",
   "css_ls",
   "nil_ls",
+  "zls",
 })
 vim.lsp.config("*", {
   root_markers = { ".git" },
