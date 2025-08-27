@@ -33,8 +33,6 @@ require("oil").setup({
 vim.api.nvim_create_autocmd({ "ColorScheme", "FileType" }, {
   pattern = { "oil" },
   callback = function()
-    -- remove bg from the sign area itself
-    vim.api.nvim_set_hl(0, "SignColumn", { bg = "NONE" })
     pcall(function()
       for _, hl in pairs(require("oil-git-status").highlight_groups) do
         vim.api.nvim_set_hl(0, hl.hl_group, { bg = "NONE" })
