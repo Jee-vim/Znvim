@@ -32,7 +32,7 @@ vim.diagnostic.config({
 })
 
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.nix", "*.ts", "*.tsx", "*.css" },
+  pattern = { "*.nix", "*.zig", "*.ts", "*.tsx", "*.css" },
   callback = function()
     vim.lsp.buf.format({ async = true })
   end,
