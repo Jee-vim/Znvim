@@ -19,20 +19,15 @@
     "body": "var ${1:name}: ${2:type} = ${3:value};",
     "description": "mutable variable declaration"
   },
-  "print debug": {
-    "prefix": "prt-deb",
-    "body": "std.debug.print(\"$1 {}\\n\", .{$2});",
-    "description": "print debug"
+  "main function": {
+    "prefix": "init",
+    "body": "const std = @import(\"std\");\n\npub fn main() !void {\n\t$1\n}",
+    "description": "const declaration"
   },
-  "data types unsigned": {
-    "prefix": "u-",
-    "body": "u${1|8,16,32,64|128|size|}",
-    "description": "min 0, (255) (65,535) (4,294,967,295) (18,446,073,709,551,615)"
-  },
-  "data types signed": {
-    "prefix": "i-",
-    "body": "i${1|8,16,32,64|128|size|}",
-    "description": "(-128,127) (-32,768 32,767) (-2,147,483,648 2,147,483,647) (-9,223,372,036,854,775,808 9,223,372,036,854,775,807)"
+  "stdin": {
+    "prefix": "std-in",
+    "body": "const stdin = std.io.getStdIn().reader();\nvar buffer: [100]u8 = undefined;\n\nstd.debug.print(\"input : \", .{});\nconst input = try stdin.readUntilDelimiterOrEof(&buffer, '\\n');\n",
+    "description": "std input"
   },
   "catch": {
     "prefix": "catch-",
