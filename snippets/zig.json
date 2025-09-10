@@ -66,5 +66,15 @@
       "std.debug.print(\"$1:\\\\n{s}\\\\n\", .{buf});"
     ],
     "description": "Read file into buffer using page allocator"
+  },
+  "catch error": {
+      "prefix": "catch-err",
+      "body": "catch |err| {\n\t$1\n};",
+      "description": "Catch Error"
+  },
+  "catch error and print the error": {
+      "prefix": "catch-err-print",
+      "body": "catch |err| {\n\tstd.debug.print(\"error: {s}\", .{@errorName(err)});\n};",
+      "description": "Catch Error and print the Error"
   }
 } 
