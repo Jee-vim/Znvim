@@ -21,7 +21,7 @@
   },
   "main function": {
     "prefix": "init",
-    "body": "const std = @import(\"std\");\n\npub fn main() !void {\n\t$1\n}",
+    "body": "const std = @import(\"std\");\n\npub fn ${1:main}() !void {\n\t$2\n}",
     "description": "const declaration"
   },
   "stdin": {
@@ -37,16 +37,16 @@
   "page allocator": {
     "prefix": "alloc-page",
     "body": "const allocator = std.heap.page_allocator;\n\nconst ${1:buf} = try allocator.alloc(u8, ${2:1024});\ndefer allocator.free(${1:buf});\n",
-    "description": "Allocate memory using the built-in page allocator"
+    "description": "Allocate memory using the built-in page allocator (more slow)"
   },
   "general purpose allocator": {
       "prefix": "alloc-gpa",
-      "body": "var gpa = std.heap.GeneralPurposeAllocator(.{}){};\nconst allocator = &gpa.allocator;\n\nconst ${1:buf} = try allocator.alloc(u8, ${2:1024});\ndefer allocator.free(${1:buf});\n",
+      "body": "var gpa = std.heap.GeneralPurposeAllocator(.{}){};\ndefer _ = gpa.deinit();\nconst allocator = gpa.allocator();\n",
       "description": "Allocate memory using a general-purpose allocator"
   },
   "arena allocator": {
       "prefix": "alloc-arena",
-      "body": "var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);\nconst allocator = &arena.allocator;\n\nconst ${1:buf1} = try allocator.alloc(u8, ${2:256});\nconst ${3:buf2} = try allocator.alloc(u8, ${4:512});\n// Reset arena to free all allocations at once\narena.reset();\n",
+      "body": "var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);\nconst allocator = arena.allocator();\n\nconst ${1:buf1} = try allocator.alloc(u8, ${2:256});\nconst ${3:buf2} = try allocator.alloc(u8, ${4:512});\narena.reset();\n",
       "description": "Allocate memory using an arena allocator"
   },
   "read file with page allocator": {
@@ -76,5 +76,13 @@
       "prefix": "catch-err-print",
       "body": "catch |err| {\n\tstd.debug.print(\"error: {s}\", .{@errorName(err)});\n};",
       "description": "Catch Error and print the Error"
+  },
+ "ArrayList u8 with capacity": {
+    "prefix": "arraylist-u8",
+    "body": [
+      "var ${1:list} = try std.ArrayList(u8).initCapacity(allocator, $2);",
+      "defer $1.deinit();"
+    ],
+    "description": "Create an ArrayList of u8 with capacity 10"
   }
 } 

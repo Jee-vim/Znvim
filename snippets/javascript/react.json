@@ -245,5 +245,9 @@
   "params-get": {
     "prefix": "params-get",
     "body": "const _p = await params;\nconst slug = _p.slug;\n"
+  },
+  "form tanstact": {
+    "prefix": "form-tanstact",
+    "body": "const form = useForm({\n\tdefvaultValues: {$1},\n\tonSubmit: ({ value }) => {\n\t\tconsole.log(value)\n\t}\n})"
   }
 }
