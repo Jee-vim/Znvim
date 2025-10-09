@@ -28,6 +28,26 @@ require("oil").setup({
       return is_dotfile or hidden_names[name] == true
     end,
   },
+  float = {
+    -- Padding around the floating window
+    padding = 2,
+    -- max_width and max_height can be integers or a float between 0 and 1 (e.g. 0.4 for 40%)
+    max_width = .5,
+    max_height = .6,
+    border = "rounded",
+    win_options = {
+      winblend = 0,
+    },
+    -- optionally override the oil buffers window title with custom function: fun(winid: integer): string
+    get_win_title = nil,
+    -- preview_split: Split direction: "auto", "left", "right", "above", "below".
+    preview_split = "auto",
+    -- This is the config that will be passed to nvim_open_win.
+    -- Change values here to customize the layout
+    override = function(conf)
+      return conf
+    end,
+  },
 })
 
 vim.api.nvim_create_autocmd({ "ColorScheme", "FileType" }, {
@@ -35,7 +55,7 @@ vim.api.nvim_create_autocmd({ "ColorScheme", "FileType" }, {
   callback = function()
     pcall(function()
       for _, hl in pairs(require("oil-git-status").highlight_groups) do
-        vim.api.nvim_set_hl(0, hl.hl_group, { bg = "NONE" })
+        vim.api.nvim_set_hl(0, hl.hl_group, { bg = "NONE",fg = "#fafafa" })
       end
     end)
   end,

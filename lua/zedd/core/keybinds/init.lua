@@ -36,8 +36,8 @@ nmap("<leader>zF", "vaBzf")
 nmap("<leader>zo", "zo")
 
 -- File manager
-nmap("<leader>e", "<cmd>Oil<cr>", { desc = "Open Oil" })
-nmap("<leader>E", "<cmd>Oil .<cr>", { desc = "Open Oil parent dir" })
+nmap("<leader>e", "<cmd>Oil --float<cr>", { desc = "Open Oil" })
+nmap("<leader>E", "<cmd>Oil . --float<cr>", { desc = "Open Oil parent dir" })
 
 -- Telescope
 nmap("<Leader>fo", "<CMD>Telescope oldfiles<CR>")
