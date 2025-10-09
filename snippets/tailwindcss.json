@@ -1,6 +1,6 @@
 {
   "class": {
-    "prefix": "class",
+    "prefix": "ss",
     "body": ".${1:name} {\n\t@apply ${0}\n}",
     "description": "class name"
   },
@@ -12,10 +12,6 @@
     "prefix": "columns",
     "body": "columns-${1}"
   },
-  "display": {
-    "prefix": "display",
-    "body": "${1|flex,grid,block,inline,hidden|}"
-  },
   "object fit": {
     "prefix": "object-fit",
     "body": "object-${1|contain,cover,fill,none,scale-down|}"
@@ -26,18 +22,14 @@
   },
   "overflow": {
     "prefix": "overflow",
-    "body": "overflow-${1|auto,hidden,clip,visible,scroll,x-auto,y-auto,x-hidden,y-hidden,x-clip,y-xlip,x-visible,y-visible,x-scroll,y-scroll|}"
+    "body": "overflow-${1|hidden,auto,clip,visible,scroll,x-auto,y-auto,x-hidden,y-hidden,x-clip,y-xlip,x-visible,y-visible,x-scroll,y-scroll|}"
   },
   "overscroll": {
     "prefix": "overscroll",
     "body": "overscroll-${1|auto,contain,none,y-auto,x-auto,x-contain,y-contain,x-none,y-none|}"
   },
-  "position": {
-    "prefix": "position",
-    "body": "position-${1|fixed,relative,static,sticky,absolute|}"
-  },
   "z-index": {
-    "prefix": "zindex",
+    "prefix": "zidx",
     "body": "z-${1|10,20,30,40,50,auto|}"
   },
   "flex direction": {
@@ -45,16 +37,16 @@
     "body": "flex-${1|row,col,row-reverse,col-reverse|}"
   },
   "flexs center between": {
-    "prefix": "flex-center-between",
-    "body": "flex items-center justify-between"
+    "prefix": "flex-center-justify",
+    "body": "flex items-center justify-${1|center,normal,start,end,between,evenly,around,stretch|}"
   },
   "flexs center center": {
-    "prefix": "flex-center-center",
-    "body": "flex items-center justify-center"
+    "prefix": "flex-center",
+    "body": "flex items-center"
   },
   "flex column": {
-    "prefix": "flex-column",
-    "body": "flex flex-col"
+    "prefix": "flex-co",
+    "body": "flex flex-col "
   },
   "order": {
     "prefix": "order",
@@ -128,14 +120,6 @@
     "prefix": "place-self",
     "body": "place-self-${1|auto,start,end,center,stretch|}"
   },
-  "width": {
-    "prefix": "w-",
-    "body": "w-${1|[px],px,1,2,3,4,5,6,7,8,9,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,70,72,80,96|}"
-  },
-  "height": {
-    "prefix": "h-",
-    "body": "h-${1|[px],px,1,2,3,4,5,6,7,8,9,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,70,72,80,96|}"
-  },
   "min width": {
     "prefix": "min-width",
     "body": "min-w-${1|[px],fit,full,0,none,xs,sm,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl|}"
@@ -152,17 +136,9 @@
     "prefix": "max-height",
     "body": "max-h-${1|[px],fit,full,0,none,xs,sm,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl|}"
   },
-  "text-size": {
-    "prefix": "text-size",
-    "body": "text-${1|[px],xs,sm,md,lg,xl,2xl,3xl,4xl,5xl,6xl,7xl,8xl,9xl|}"
-  },
   "text-weight": {
     "prefix": "font-style",
     "body": "font-${1|tight,normal,medium,semibold,bold|}"
-  },
-  "text indent": {
-    "prefix": "text-indent",
-    "body": "indent-${1|px,1,2,3,4,5,6,7,8,9,8,9,10,11,12,14,16,20,24,28,32,36,40,44,48,52,56,60,64,70,72,80,96|}"
   },
   "white space": {
     "prefix": "whitespace",
@@ -200,10 +176,6 @@
     "prefix": "text-decoration",
     "body": "${1|underline,overline,line-through,no-underline|}"
   },
-  "decoration color": {
-    "prefix": "underline",
-    "body": "underline-${1:color}"
-  },
   "background attcachment": {
     "prefix": "bg",
     "body": "bg-${1|fixed,local,scroll|}"
@@ -220,25 +192,17 @@
     "prefix": "bg-gradient-from",
     "body": "${1|from-blue-,from-red-,from-slate-,from-gray-,from-zinc-,from-neutral-,from-stone-,from-orange-,from-amber-,from-yellow-,from-lime-,from-green-,from-teal-,from-cyan-,from-sky-,from-indigo-,from-violet-,from-purple-,from-fuhcsia-,from-pink-,from-rose-|}"
   },
-  "border": {
-    "prefix": "border",
-    "body": "border"
-  },
   "border color": {
     "prefix": "border-color",
     "body": "border-${1|[#],blue-,red-,slate-,gray-,zinc-,neutral-,stone-,orange-,amber-,yellow-,lime-,green-,teal-,cyan-,sky-,indigo-,violet-,purple-,fuhcsia-,pink-,rose-|}"
   },
-  "background color": {
-    "prefix": "bg-color",
-    "body": "bg-${1|[#],blue-,red-,slate-,gray-,zinc-,neutral-,stone-,orange-,amber-,yellow-,lime-,green-,teal-,cyan-,sky-,indigo-,violet-,purple-,fuhcsia-,pink-,rose-|}"
-  },
   "rounded": {
     "prefix": "rounded",
-    "body": "rounded-${1|[4px],[8px],[12px],[px],full,none,sm,md,lg,xl,2xl|}"
+    "body": "rounded-${1|[4px],[8px],[12px],[16px],[24px],[px],full,none,sm,md,lg,xl,2xl|}"
   },
   "divide width": {
     "prefix": "divide",
-    "body": "divide-${1|y-0,y-2,y-4,y-8,y,x-0,x-2,x-4,x-8,x|}"
+    "body": "divide-${1|y,y-0,y-2,y-4,y-8,y,x-0,x-2,x-4,x-8,x|}"
   },
   "divide color": {
     "prefix": "divide-color",
@@ -271,10 +235,6 @@
   "brightness": {
     "prefix": "brightness",
     "body": "brightness-${1|0,50,75,90,95,100,105,110,125,150,200|}"
-  },
-  "table": {
-    "prefix": "table",
-    "body": "table-${1|auto,fixed|}"
   },
   "transition propery": {
     "prefix": "transition",
@@ -318,24 +278,9 @@
     "body": "transition-all duration-300 ease-in-out",
     "description": "custome simple animate"
   },
-  "custome button sytle": {
-    "prefix": "buttonStyle",
-    "body": "button {\n\t@apply outline-none ring-0 flex justify-center items-center text-center p-1\n}",
-    "description": "custome button style"
-  },
-  "custome nav sytle": {
-    "prefix": "navStyle",
-    "body": "nav {\n\t@apply px-5 md:px-10 lg:px-16 fixed top-0 left-0 z-50 flex justify-between items-center h-14 w-full backdrop-filter backdrop-blur-sm bg-opacity-80 bg-slate-500;\n}",
-    "description": "custome nav style"
-  },
-  "custome nav section style": {
-    "prefix": "navSectionStyle",
-    "body": [
-      ".menu {\n\t@apply md:hidden transition-all duration-700 ease-in-out cursor-pointer outline-none z-40 text-cyan font-semibold;\n}",
-      ".navMobile {\n\t @apply md:hidden flex flex-col justify-center gap-16 transition-all duration-500 ease-in h-screen w-[100%] text-end absolute top-0 py-28 px-10 bg-slate-500;\n}",
-      ".navMobileHidden{\n\t@apply fixed left-[-100%] ease-in;\n}",
-      ".navDesktop {\n\t@apply hidden md:flex gap-10;\n}"
-    ],
-    "description": "custome nav section style"
+  "custome arbitrary": {
+    "prefix": "&",
+    "body": "[&$1]:$2",
+    "description": "arbitrary starter"
   }
 }
