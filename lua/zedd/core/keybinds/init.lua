@@ -65,5 +65,5 @@ nmap("<leader>br", [[:%s/\v(true|false)/boolean/g<CR>]])              -- boolean
 -- Center Screen on Jumping
 nmap("n", "nzzzv")
 nmap("N", "Nzzzv")
-nmap(")", "<C-d>zz")
-nmap("(", "<C-u>zz")
+nmap("(", "<C-d>zz")
+nmap(")", "<C-u>zz")
