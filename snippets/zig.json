@@ -1,13 +1,8 @@
 {
   "import": {
-    "prefix": "impt-",
+    "prefix": "import",
     "body": "const $1 = @import(\"$2\");",
     "description": "import library"
-  },
-  "import std": {
-    "prefix": "impt-std",
-    "body": "const std = @import(\"std\");",
-    "description": "import standard library"
   },
   "const": {
     "prefix": "cnt-",
@@ -24,16 +19,6 @@
     "body": "const std = @import(\"std\");\n\npub fn ${1:main}() !void {\n\t$2\n}",
     "description": "const declaration"
   },
-  "stdin": {
-    "prefix": "std-in",
-    "body": "const stdin = std.io.getStdIn().reader();\nvar buffer: [100]u8 = undefined;\n\nstd.debug.print(\"input : \", .{});\nconst input = try stdin.readUntilDelimiterOrEof(&buffer, '\\n');\n",
-    "description": "std input"
-  },
-  "type string": {
-    "prefix": "str-",
-    "body": "[]const u8",
-    "description": "generate string type"
-  },
   "page allocator": {
     "prefix": "alloc-page",
     "body": "const allocator = std.heap.page_allocator;\n\nconst ${1:buf} = try allocator.alloc(u8, ${2:1024});\ndefer allocator.free(${1:buf});\n",
@@ -49,40 +34,23 @@
       "body": "var arena = std.heap.ArenaAllocator.init(std.heap.page_allocator);\nconst allocator = arena.allocator();\n\nconst ${1:buf1} = try allocator.alloc(u8, ${2:256});\nconst ${3:buf2} = try allocator.alloc(u8, ${4:512});\narena.reset();\n",
       "description": "Allocate memory using an arena allocator"
   },
-  "read file with page allocator": {
-    "prefix": "alloc-read-file",
-    "body": [
-      "const allocator = std.heap.page_allocator;",
-      "",
-      "const file = try std.fs.cwd().openFile(\"${1:file.zig}\", .{});",
-      "defer file.close();",
-      "const stat = try file.stat();",
-      "const file_size = stat.size;",
-      "",
-      "const buf = try allocator.alloc(u8, file_size);",
-      "defer allocator.free(buf);",
-      "",
-      "_ = try file.readAll(buf);",
-      "std.debug.print(\"$1:\\\\n{s}\\\\n\", .{buf});"
-    ],
-    "description": "Read file into buffer using page allocator"
-  },
   "catch error": {
       "prefix": "catch-err",
-      "body": "catch |err| {\n\t$1\n};",
-      "description": "Catch Error"
-  },
-  "catch error and print the error": {
-      "prefix": "catch-err-print",
       "body": "catch |err| {\n\tstd.debug.print(\"error: {s}\", .{@errorName(err)});\n};",
       "description": "Catch Error and print the Error"
   },
- "ArrayList u8 with capacity": {
-    "prefix": "arraylist-u8",
+  "buffered stdout": {
+    "prefix": "stdout-buf",
     "body": [
-      "var ${1:list} = try std.ArrayList(u8).initCapacity(allocator, $2);",
-      "defer $1.deinit();"
+      "var stdout_buffer: [${1:1024}]u8 = undefined;",
+      "var stdout_writer = std.fs.File.stdout().writer(&stdout_buffer);",
+      "const stdout = &stdout_writer.interface;"
     ],
-    "description": "Create an ArrayList of u8 with capacity 10"
+    "description": "Setup buffered stdout writer"
+  },
+  "stdout print": {
+    "prefix": "stdout-print",
+    "body": "try stdout.print(\"${1:text}\\\\n\", .{${2}});",
+    "description": "Print formatted text to stdout"
   }
 } 

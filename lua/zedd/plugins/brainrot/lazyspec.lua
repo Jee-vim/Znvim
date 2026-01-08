@@ -11,10 +11,10 @@ return {
     sound_enabled = true,     -- enable sounds
     image_enabled = false,     -- enable images (needs image.nvim)
 
-    boom_volume = 100,         -- volume for vine boom sound (0..100)
-    phonk_volume = 100,        -- volume for phonk sound (0..100)
+    boom_volume = 60,         -- volume for vine boom sound (0..100)
+    phonk_volume = 60,        -- volume for phonk sound (0..100)
 
-    boom_sound =  "~/Downloads/sounds/error.mp3",         -- custom boom sound path (e.g., "~/sounds/boom.ogg")
+    boom_sound =  "~/Downloads/sounds/awwas.mp3",         -- custom boom sound path (e.g., "~/sounds/boom.ogg")
     phonk_dir = "~/Downloads/sounds/phonks/",          -- custom phonk folder path (e.g., "~/sounds/phonks")
     image_dir = nil,          -- custom image folder path (e.g., "~/memes/images")
 

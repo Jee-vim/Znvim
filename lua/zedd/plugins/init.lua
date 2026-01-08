@@ -31,7 +31,7 @@ local plugins = {
 	require("zedd.plugins.test.lazyspec"),
 	require("zedd.plugins.screenkey.lazyspec"),
 
-	require("zedd.plugins.brainrot.lazyspec"),
+	-- require("zedd.plugins.brainrot.lazyspec"),
 
 	-- require("zedd.plugins.cursor.lazyspec"),
 	-- require("zedd.plugins.ollama.lazyspec"),
