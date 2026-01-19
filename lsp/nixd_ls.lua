@@ -1,8 +1,8 @@
 return {
-  cmd = { "nil", "--stdio" },
+  cmd = { "nixd" },
   filetypes = { "nix" },
   settings = {
-    ["nil"] = {
+    ["nixd"] = {
       formatting = {
         command = { "alejandra" },
       },

@@ -2,7 +2,7 @@ vim.lsp.enable({
   "ts_ls",
   "lua_ls",
   "css_ls",
-  "nil_ls",
+  "nixd_ls",
   "zls",
 })
 vim.lsp.config("*", {
