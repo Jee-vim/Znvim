@@ -16,6 +16,7 @@ vim.g.vsnip_filetypes = {
   },
   javascript = { "javascript/javascript", "javascript/js-ts" },
   typescript = { "javascript/typescript", "javascript/js-ts" },
+  astro = {"javascript/react","html"},
   css = { "tailwindcss" },
   html = { "angular/html" },
   http = { "http" },

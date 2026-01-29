@@ -1,5 +1,6 @@
 vim.lsp.enable({
   "ts_ls",
+  "astro",
   "lua_ls",
   "css_ls",
   "nixd_ls",
