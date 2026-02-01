@@ -2,6 +2,13 @@ local map = require("zedd.core.keybinds.keymap")
 local nmap = map.nmap
 local vmap = map.vmap
 
+-- API / Kulala
+nmap("<leader>rr", function() require("kulala").run() end, { desc = "Run API request" })
+nmap("<leader>ri", function() require("kulala").inspect() end, { desc = "Inspect API request" })
+nmap("<leader>rn", function() require("kulala").jump_next() end, { desc = "Next API request" })
+nmap("<leader>rp", function() require("kulala").jump_prev() end, { desc = "Prev API request" })
+nmap("<leader>rt", function() require("kulala").toggle_view() end, { desc = "Toggle body/headers" })
+
 -- Buffer
 nmap("<leader>bd", "<CMD>bd<CR>", { desc = "Close buffer" })
 nmap("<leader>ba", "<CMD>%bd|e#<CR>", { desc = "Close all buffers except current" })

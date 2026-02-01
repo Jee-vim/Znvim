@@ -7,7 +7,7 @@ vim.lsp.enable({
   "zls",
 })
 vim.lsp.config("*", {
-  root_markers = { ".git" },
+  root_markers = { ".git", "package.json", "tsconfig.json" },
   capabilities = {
     textDocument = {
       semanticTokens = {

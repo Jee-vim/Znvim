@@ -30,6 +30,7 @@ local plugins = {
 	require("zedd.plugins.screenshot.lazyspec"),
 	require("zedd.plugins.test.lazyspec"),
 	require("zedd.plugins.screenkey.lazyspec"),
+	require("zedd.plugins.kulala.lazyspec"),
 
 	-- require("zedd.plugins.brainrot.lazyspec"),
 
