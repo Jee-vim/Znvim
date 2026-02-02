@@ -43,8 +43,8 @@ nmap("<leader>zF", "vaBzf")
 nmap("<leader>zo", "zo")
 
 -- File manager
-nmap("<leader>e", "<cmd>Oil --float<cr>", { desc = "Open Oil" })
-nmap("<leader>E", "<cmd>Oil . --float<cr>", { desc = "Open Oil parent dir" })
+nmap("<leader>e", "<CMD>Oil --float<cr>", { desc = "Open Oil" })
+nmap("<leader>E", "<CMD>Oil . --float<cr>", { desc = "Open Oil parent dir" })
 
 -- Telescope
 nmap("<Leader>fo", "<CMD>Telescope oldfiles<CR>")
@@ -55,13 +55,18 @@ nmap("<Leader>fb", "<CMD>Telescope buffers<CR>")
 
 -- Custome
 nmap("<leader>w", "<CMD>w<CR>")
-nmap("<leader>a", "gg<S-v>G")
-nmap("<leader>q", "<CMD>q<CR>")
+nmap("<leader>a", "gg<S-v>G") -- select all
 vmap("<S-j>", ":m '>+1<CR>gv=gv")     -- move line bottom
 vmap("<S-k>", ":m '<-2<CR>gv=gv")     -- move line top
 nmap("<S-s>/", [[:%s//<left>]])
 nmap("U", "<C-r>", { desc = "Redo" }) -- Vim default `U` is useless anyway
 nmap("<Esc>", ":noh<CR>")             -- clear higlight and back to normal
+
+-- Move Screen
+nmap("<leader>wh", "<C-w>h")
+nmap("<leader>wj", "<C-w>j")
+nmap("<leader>wk", "<C-w>k")
+nmap("<leader>wl", "<C-w>l")
 
 -- String substitutions
 nmap("<leader>cc", [[:s/\([a-zA-Z]\)\(-\)\([a-zA-Z]\)/\1\u\3/g<CR>]]) -- kebab → camel
