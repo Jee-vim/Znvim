@@ -3,7 +3,12 @@ local nmap = map.nmap
 local vmap = map.vmap
 
 -- API / Kulala
-nmap("<leader>rr", function() require("kulala").run() end, { desc = "Run API request" })
+nmap("<leader>rr", function()
+  require("kulala").run()
+  vim.defer_fn(function()
+    vim.cmd("wincmd l")
+  end, 100)
+end, { desc = "Run API request" })
 nmap("<leader>ri", function() require("kulala").inspect() end, { desc = "Inspect API request" })
 nmap("<leader>rn", function() require("kulala").jump_next() end, { desc = "Next API request" })
 nmap("<leader>rp", function() require("kulala").jump_prev() end, { desc = "Prev API request" })
@@ -55,7 +60,7 @@ nmap("<Leader>fb", "<CMD>Telescope buffers<CR>")
 
 -- Custome
 nmap("<leader>w", "<CMD>w<CR>")
-nmap("<leader>a", "gg<S-v>G") -- select all
+nmap("<leader>a", "gg<S-v>G")         -- select all
 vmap("<S-j>", ":m '>+1<CR>gv=gv")     -- move line bottom
 vmap("<S-k>", ":m '<-2<CR>gv=gv")     -- move line top
 nmap("<S-s>/", [[:%s//<left>]])
@@ -63,10 +68,10 @@ nmap("U", "<C-r>", { desc = "Redo" }) -- Vim default `U` is useless anyway
 nmap("<Esc>", ":noh<CR>")             -- clear higlight and back to normal
 
 -- Move Screen
-nmap("<leader>wh", "<C-w>h")
-nmap("<leader>wj", "<C-w>j")
-nmap("<leader>wk", "<C-w>k")
-nmap("<leader>wl", "<C-w>l")
+-- nmap("<leader>wh", "<C-w>h")
+-- nmap("<leader>wj", "<C-w>j")
+-- nmap("<leader>wk", "<C-w>k")
+-- nmap("<leader>wl", "<C-w>l")
 
 -- String substitutions
 nmap("<leader>cc", [[:s/\([a-zA-Z]\)\(-\)\([a-zA-Z]\)/\1\u\3/g<CR>]]) -- kebab → camel
