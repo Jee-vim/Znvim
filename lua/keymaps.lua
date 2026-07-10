@@ -7,7 +7,7 @@ local function Map(mode, lhs, rhs, opts)
 end
 
 vim.g.mapleader = " "
-Map
+
 Map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlighting" })
 Map("n", "<leader>w", "<cmd>w<CR>", { desc = "Write" })
 Map("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
