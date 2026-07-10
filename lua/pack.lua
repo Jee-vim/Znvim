@@ -12,7 +12,7 @@ vim.pack.add({
   "https://github.com/hrsh7th/vim-vsnip-integ",
 })
 
-local map = vim.keymap.set
+local Map = require("keymaps")
 
 -- mini files ----
 local MiniFiles = require("mini.files")
@@ -39,8 +39,8 @@ MiniFiles.setup({
   },
 })
 
-map("n", "<leader>-", "<cmd>lua MiniFiles.open()<CR>", { desc = "Toggle mini file explorer" })
-map("n", "-", function()
+Map("n", "<leader>-", "<cmd>lua MiniFiles.open()<CR>", { desc = "Toggle mini file explorer" })
+Map("n", "-", function()
   MiniFiles.open(vim.api.nvim_buf_get_name(0), false)
   MiniFiles.reveal_cwd()
 end, { desc = "Toggle into currently opened file" })
@@ -51,16 +51,16 @@ local MiniExtra = require("mini.extra")
 MiniPick.setup()
 MiniExtra.setup()
 
-map("n", "<leader>ff", function() MiniPick.builtin.files() end, { desc = "Mini File Picker" })
-map("n", "<leader>fo", function() MiniExtra.pickers.oldfiles() end, { desc = "Mini Old File Picker" })
-map("n", "<leader>fg", function() MiniPick.builtin.grep_live({ pattern = vim.fn.expand("<cword>") }) end,
+Map("n", "<leader>ff", function() MiniPick.builtin.files() end, { desc = "Mini File Picker" })
+Map("n", "<leader>fo", function() MiniExtra.pickers.oldfiles() end, { desc = "Mini Old File Picker" })
+Map("n", "<leader>fg", function() MiniPick.builtin.grep_live({ pattern = vim.fn.expand("<cword>") }) end,
   { desc = "Grep word/Search word" })
-map("n", "<leader>fh", function() MiniPick.builtin.help() end, { desc = "Mini Help" })
-map("n", "<leader>fk", function() MiniExtra.pickers.keymaps() end, { desc = 'Search keymaps' })
-map("n", "<leader>xx", function() MiniExtra.pickers.diagnostic() end, { desc = "Mini Picker Diagnostics" })
-map("n", "<leader>fc", function() MiniExtra.pickers.git_files({ scope = "modified" }) end,
+Map("n", "<leader>fh", function() MiniPick.builtin.help() end, { desc = "Mini Help" })
+Map("n", "<leader>fk", function() MiniExtra.pickers.keymaps() end, { desc = 'Search keymaps' })
+Map("n", "<leader>xx", function() MiniExtra.pickers.diagnostic() end, { desc = "Mini Picker Diagnostics" })
+Map("n", "<leader>fc", function() MiniExtra.pickers.git_files({ scope = "modified" }) end,
   { desc = "Search changed files" })
-map("n", "<leader>fX", function()
+Map("n", "<leader>fX", function()
   local stdout = vim.fn.systemlist("git grep -l -F '<<<<<<< HEAD'")
   if vim.v.shell_error ~= 0 or #stdout == 0 then
     print("[INFO] No conflict markers found")
@@ -103,10 +103,10 @@ require('snippet').setup()
 --- mini git ---
 require("mini.git").setup()
 
-map("n", "<leader>gs", "<cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show Git data under cursor" })
-map("n", "<leader>gn", "/^[<=>]\\{7\\}<CR>", { desc = "Next merge conflict" })
-map("n", "<leader>gp", "?^[<=>]\\{7\\}<CR>", { desc = "Prev merge conflict" })
-map("n", "<leader>go", function()
+Map("n", "<leader>gs", "<cmd>lua MiniGit.show_at_cursor()<CR>", { desc = "Show Git data under cursor" })
+Map("n", "<leader>gn", "/^[<=>]\\{7\\}<CR>", { desc = "Next merge conflict" })
+Map("n", "<leader>gp", "?^[<=>]\\{7\\}<CR>", { desc = "Prev merge conflict" })
+Map("n", "<leader>go", function()
   local cursor = vim.api.nvim_win_get_cursor(0)[1]
   local start_lnum = vim.fn.search("^<<<<<<<", "bnW")
   local end_lnum = vim.fn.search("^>>>>>>>", "nW")
@@ -130,7 +130,7 @@ map("n", "<leader>go", function()
   end
 end, { desc = "Choose Local (Our changes)" })
 
-map("n", "<leader>gt", function()
+Map("n", "<leader>gt", function()
   local cursor = vim.api.nvim_win_get_cursor(0)[1]
   local start_lnum = vim.fn.search("^<<<<<<<", "bnW")
   local end_lnum = vim.fn.search("^>>>>>>>", "nW")

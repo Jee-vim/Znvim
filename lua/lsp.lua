@@ -1,14 +1,14 @@
-local map = vim.keymap.set
-map('n', '<leader>ld', vim.lsp.buf.definition, { desc = "Go to definition" })
-map("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format Local buffer" })
-map('n', '<leader>lr', vim.lsp.buf.rename, { desc = "Rename Symbole" })
-map('n', "<leader>lj", function()
+local Map = require("keymaps")
+Map('n', '<leader>ld', vim.lsp.buf.definition, { desc = "Go to definition" })
+Map("n", "<leader>lf", vim.lsp.buf.format, { desc = "Format Local buffer" })
+Map('n', '<leader>lr', vim.lsp.buf.rename, { desc = "Rename Symbole" })
+Map('n', "<leader>lj", function()
   vim.diagnostic.jump({
     count= 1,
     float=true
   })
 end, { desc = "Next diagnostic" })
-map('n', "<leader>lk", function()
+Map('n', "<leader>lk", function()
   vim.diagnostic.jump({
     count = -1,
     float = true,
