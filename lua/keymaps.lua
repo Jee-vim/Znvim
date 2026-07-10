@@ -7,7 +7,7 @@ local function Map(mode, lhs, rhs, opts)
 end
 
 vim.g.mapleader = " "
-
+Map
 Map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search highlighting" })
 Map("n", "<leader>w", "<cmd>w<CR>", { desc = "Write" })
 Map("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
@@ -63,6 +63,5 @@ end, { desc = "Toggle Undotree" })
 
 Map("n", "*", [["+yiw*Nzz]], { desc = "Search word under cursor, yank, stay centered" })
 Map("n", "ya", "<cmd>%y+<CR>", { desc = "Yank entire buffer to system clipboard" })
-Map("x", "<leader>p", [["_dP]], { desc = "Paste over selection without losing clipboard" })
 
 return Map
