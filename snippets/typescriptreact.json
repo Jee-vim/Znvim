@@ -20,7 +20,7 @@
   },
   "jsx elements map with return": {
     "prefix": "jmr",
-    "body": "{${1:Array.from({length:3})}.map((item, id) => {\n\treturn <li key={id}>\n\t$0\n</li>\n})}",
+    "body": "{${1:Array.from({length:3}).map((item, id) => {\n\treturn <li key={id}>\n\t$0\n</li>\n})}",
     "description": "an element self closed"
   },
   "useState": {
