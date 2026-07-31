@@ -63,5 +63,6 @@ end, { desc = "Toggle Undotree" })
 
 Map("n", "*", [["+yiw*Nzz]], { desc = "Search word under cursor, yank, stay centered" })
 Map("n", "ya", "<cmd>%y+<CR>", { desc = "Yank entire buffer to system clipboard" })
+Map("n", "ga", "ggVG", { desc = "Select entire buffer in visual mode" })
 
 return Map
