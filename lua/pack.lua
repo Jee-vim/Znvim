@@ -26,7 +26,7 @@ MiniFiles.setup({
   },
   content = {
     filter = function(fs_entry)
-      if fs_entry.name == ".git" or fs_entry.name == "node_modules" then
+      if fs_entry.name == ".git" or fs_entry.name == ".gitignore" or fs_entry.name == "node_modules" or fs_entry.name == "dist" then
         return false
       end
 
@@ -157,7 +157,7 @@ end, { desc = "Choose Remote (Their changes)" })
 --- mini diff and fugitive ---
 local MiniDiff = require("mini.diff")
 MiniDiff.setup({
-	source = MiniDiff.gen_source.git({ index = false }),
+  source = MiniDiff.gen_source.git({ index = false }),
 })
 
 vim.keymap.set("n", "<leader>gd", "<cmd>Gvdiffsplit<CR>", { desc = "Git diff split", })
